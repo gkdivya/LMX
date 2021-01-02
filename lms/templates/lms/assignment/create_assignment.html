@@ -1,15 +1,21 @@
 {% extends 'lms/lms_base.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
-<h1 class="text-center">Create Assignment</h1>
+    <h1 class="text-center">Create Assignment</h1>
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.media }}
-    {{ form.as_p }}
-    <button class="btn btn-secondary">Create Assignment</button>
-</form>
-
+    <div class=""content-section>
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class ="border-bottom mb-2">Assignment</legend>
+                {{ form.media}}
+                {{ form.as_p}}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-secondary">Create Assignment</button>
+            </div>
+        </form>
+    </div>
 
 {% endblock content %}
