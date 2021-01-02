@@ -10,7 +10,9 @@
             <fieldset class="form-group">
                 <legend class ="border-bottom mb-2">Assignment</legend>
                 {{ form.media}}
-                {{ form.as_p}}
+                <table>
+                    {{ form.as_table}}
+                </table>
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-secondary">Create Assignment</button>

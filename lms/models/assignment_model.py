@@ -6,6 +6,7 @@ from django.urls import reverse
 from lms.models.course_model import Course
 from django import forms
 
+
 class Assignment(models.Model):
     GRADES_DISPLAY = (
         ('percentage', 'Percentage'),
@@ -31,10 +32,10 @@ class Assignment(models.Model):
     display_grades = models.CharField(choices=GRADES_DISPLAY, max_length=20, default='percentage')
     sub_type = models.CharField(choices=SUBMISSION_TYPE, max_length=20, default='no submission')
     anonymous_grading = models.BooleanField(default=False)
-    assign_to = models.ManyToManyField(Course, blank=True,null=True)
-    due_date = models.DateField(blank=True,null=True)
-    available_from = models.DateField(blank=True,null=True)
-    until = models.DateField(blank=True,null=True)
+    assign_to = models.ManyToManyField(Course, blank=True, null=True)
+    due_date = models.DateField(blank=True, null=True)
+    available_from = models.DateField(blank=True, null=True)
+    until = models.DateField(blank=True, null=True)
     # image = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True, null=True)
 
     # teacher = models.ForeignKey(User, on_delete=models.CASCADE)
